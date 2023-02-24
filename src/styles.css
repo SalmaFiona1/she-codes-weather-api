@@ -1,6 +1,18 @@
+body {
+  background: linear-gradient(
+    109.8deg,
+    rgb(62, 5, 116) -5.2%,
+    rgb(41, 14, 151) -5.2%,
+    rgb(216, 68, 148) 103.3%
+  );
+}
+
 .body-wrapper {
   max-width: 950px;
   margin: 30px auto;
-  background-color: red;
+  background: rgba(155, 155, 155, 0.1);
+
+  border: 10px solid rgba(229, 225, 227, 0.1);
+  border-radius: 5px;
   padding: 20px;
 }
