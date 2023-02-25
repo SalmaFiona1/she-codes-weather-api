@@ -31,3 +31,11 @@ img {
   max-width: 1200px;
   background: rgba(0, 0, 0, 0.2);
 }
+
+#city-search-result {
+  filter: drop-shadow(0px -1px 10px rgba(247, 244, 247, 0.4));
+}
+
+.sun {
+  filter: drop-shadow(0px -1px 10px rgb(242, 176, 52 0.4));
+}
