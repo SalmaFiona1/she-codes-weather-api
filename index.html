@@ -88,6 +88,7 @@
                 width="52"
                 class="forecast-image p-1"
               /> </div>
+
            <div class="col-2 p-2 m-1 bg-gradient  w-100 text-end"> <div class="weather-forecast-day fw-semibold"> Tom
                <span class="city-forecast-temp">°C</span>
               </div>
@@ -113,23 +114,25 @@
           </div>
 
       
-          </div>
-
-
-          
-
-
-
-        </div>
-
+          </div>   </div>
+ <h2>
+          Current
+        </h2>
 <div class="row">
-  <div class="col-sm p-3 m-1 bg-gradient fw-semibold" id="feels-like">Feels like
+  <div class="col-sm p-3 m-1 bg-gradient fw-semibold text-end">Feels like <span id="feels-like"> 1 </span>
   </div>
-  <div class="col-sm p-3 m-1 bg-gradient fw-semibold" id="city-description">Current description</div>
+  <div class="col-sm p-3 m-1 bg-gradient fw-semibold text-end">Current description
+    <span id="city-description">2</span>
+  </div>
 </div>
 <div class="row">
-  <div class="col-sm p-3 m-1 bg-gradient fw-semibold" id="wind">Wind speed</div>
-  <div class="col-sm p-3 m-1 bg-gradient fw-semibold" id="humidity"> Humidity</div>
+  <div class="col-sm p-3 m-1 bg-gradient fw-semibold text-end" >Wind:
+
+    <span id="wind-speed"></span>
+  </div>
+  <div class="col-sm p-3 m-1 bg-gradient fw-semibold text-end"> Humidity:  
+      <span  id="humidity"></span>
+  </div>
 </div>
         <!-- end of content -->
       </div>
