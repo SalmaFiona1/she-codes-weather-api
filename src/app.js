@@ -8,7 +8,7 @@ function displayData(response) {
 
   let wind = document.querySelector("#wind-speed");
   let humidity = document.querySelector("#humidity");
-  city.innerHTML = response.data.city;
+  city.innerHTML = `${response.data.city}, ${response.data.country}`;
   temperature.innerHTML = `${Math.round(response.data.temperature.current)}°C`;
   wind.innerHTML = response.data.wind.speed;
   humidity.innerHTML = response.data.temperature.humidity;
