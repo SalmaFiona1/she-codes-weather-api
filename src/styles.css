@@ -8,6 +8,10 @@ body {
   font-size: 20px;
 }
 
+h2,
+#city-temp {
+  color: rgba(193, 188, 188, 0.639);
+}
 img {
   filter: drop-shadow(0px -1px 10px rgba(247, 244, 247, 0.4));
 }
@@ -23,7 +27,7 @@ img {
 
 .col-2 {
   box-shadow: 2px 10px 22px rgba(0, 0, 0, 0.2);
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .card {
