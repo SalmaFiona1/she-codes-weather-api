@@ -2,14 +2,16 @@ function displayData(response) {
   console.log(response.data);
 
   let temperature = document.querySelector("#city-temp");
-  let city = document.querySelector("#user-city");
+  let citySearch = document.querySelector("#city-search-result");
+  citySearch.innerHTML = response.data.city;
   temperature.innerHTML = Math.round(response.data.temperature.current);
-  city.innerHTML = response.data.city;
 }
-
+let city = "London";
 let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Lisbon&key=${apiKey}&units=metric`;
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 console.log(apiUrl);
+// let cityInput = document.querySelector("#city-search-result");
+// cityInput.innerHTML = `${city}`;
 
 function submitCity(event) {
   event.preventDefault();
