@@ -10,8 +10,8 @@ function displayData(response) {
   let humidity = document.querySelector("#humidity");
   city.innerHTML = `${response.data.city}, ${response.data.country}`;
   temperature.innerHTML = `${Math.round(response.data.temperature.current)}°C`;
-  wind.innerHTML = response.data.wind.speed;
-  humidity.innerHTML = response.data.temperature.humidity;
+  wind.innerHTML = `${Math.round(response.data.wind.speed)} mph`;
+  humidity.innerHTML = `${response.data.temperature.humidity}%`;
 }
 let city = "London";
 let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
