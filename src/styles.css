@@ -8,10 +8,6 @@ body {
   font-size: 20px;
 }
 
-#city-temp {
-  color: rgba(193, 188, 188, 0.639);
-  font-size: 50px;
-}
 img {
   filter: drop-shadow(0px -1px 10px rgba(247, 244, 247, 0.4));
 }
@@ -42,4 +38,14 @@ img {
 
 .sun {
   filter: drop-shadow(0px -1px 10px rgb(242, 176, 52 0.4));
+}
+
+#city-temp {
+  color: rgba(193, 188, 188, 0.639);
+  font-size: 50px;
+}
+
+#wind-speed,
+#humidity {
+  color: rgba(193, 188, 188, 0.639);
 }
