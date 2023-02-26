@@ -1,5 +1,10 @@
 function displayData(response) {
   console.log(response.data);
+
+  let temperature = document.querySelector("#city-temp");
+  let city = document.querySelector("#user-city");
+  temperature.innerHTML = Math.round(response.data.temperature.current);
+  city.innerHTML = response.data.city;
 }
 
 let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
