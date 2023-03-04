@@ -4,8 +4,12 @@ function lastUpdateTime(timestamp) {
   let minutes = date.getMinutes();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[date.getDay()];
+  let timeString =
+    hours.toString().padStart(2, "0") +
+    ":" +
+    minutes.toString().padStart(2, "0");
 
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${timeString}`;
 }
 
 function displayData(response) {
