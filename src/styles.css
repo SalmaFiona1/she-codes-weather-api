@@ -32,8 +32,9 @@ img {
   background: rgba(0, 0, 0, 0.2);
 }
 
-#city-search-result {
+#user-search-result {
   filter: drop-shadow(0px -1px 10px rgba(247, 244, 247, 0.4));
+  text-shadow: 1px 1px 10px rgba(254, 250, 254, 0.2);
 }
 
 .sun {
