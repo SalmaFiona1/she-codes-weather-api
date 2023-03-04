@@ -50,3 +50,6 @@ img {
 #humidity {
   color: rgba(193, 188, 188, 0.639);
 }
+.city-description::first-letter {
+  text-transform: capitalize;
+}
