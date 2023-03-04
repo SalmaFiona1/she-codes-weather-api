@@ -2,6 +2,7 @@ function lastUpdateTime(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
+  let am_pm = date.getHours() < 12;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[date.getDay()];
   let timeString =
@@ -9,7 +10,7 @@ function lastUpdateTime(timestamp) {
     ":" +
     minutes.toString().padStart(2, "0");
 
-  return `${day} ${timeString}`;
+  return ` ${day} ${timeString}${am_pm ? "AM" : "PM"}`;
 }
 
 function displayData(response) {
@@ -17,13 +18,16 @@ function displayData(response) {
 
   let temperature = document.querySelector("#city-temp");
   let city = document.querySelector("#user-search-result");
-
+  let current = document.querySelector("#feels-like");
   let wind = document.querySelector("#wind-speed");
   let humidity = document.querySelector("#humidity");
+  let description = document.querySelector("#city-description");
   city.innerHTML = `${response.data.city}, ${response.data.country}`;
   temperature.innerHTML = `${Math.round(response.data.temperature.current)}°C`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)} mph`;
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
+  current.innerHTML = `${Math.round(response.data.temperature.feels_like)}°C`;
+  description.innerHTML = `${response.data.condition.description}`;
 
   let dateElement = document.querySelector("#last-updated");
   dateElement.innerHTML = lastUpdateTime(response.data.time * 1000);
