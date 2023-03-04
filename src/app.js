@@ -2,9 +2,10 @@ function lastUpdateTime(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
 
-  return `${day} ${hours} ${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 function displayData(response) {
