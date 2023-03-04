@@ -31,7 +31,8 @@ img {
   background: rgba(0, 0, 0, 0.2);
 }
 
-#user-search-result {
+#user-search-result,
+.weather-display {
   color: #c9f9fb;
   font-family: "Poppins", sans-serif;
 }
