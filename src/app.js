@@ -1,4 +1,6 @@
-function lastUpdateTime(timestamp) {}
+function lastUpdateTime(timestamp) {
+  return "Hello";
+}
 
 function displayData(response) {
   console.log(response.data);
