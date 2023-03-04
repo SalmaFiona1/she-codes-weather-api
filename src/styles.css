@@ -33,7 +33,7 @@ img {
 
 #user-search-result,
 .weather-display {
-  color: #c9f9fb;
+  color: #c9f9fb8f;
   font-family: "Poppins", sans-serif;
 }
 
@@ -47,7 +47,9 @@ img {
 }
 
 #wind-speed,
-#humidity {
+#humidity,
+#city-description,
+#feels-like {
   color: rgba(193, 188, 188, 0.639);
 }
 .city-description::first-letter {
