@@ -1,5 +1,10 @@
 function lastUpdateTime(timestamp) {
-  return "Hello";
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let day = date.getDay();
+
+  return `${day} ${hours} ${minutes}`;
 }
 
 function displayData(response) {
@@ -14,6 +19,9 @@ function displayData(response) {
   temperature.innerHTML = `${Math.round(response.data.temperature.current)}°C`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)} mph`;
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
+
+  let dateElement = document.querySelector("#last-updated");
+  dateElement.innerHTML = lastUpdateTime(response.data.time * 1000);
 }
 let city = "London";
 let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
