@@ -59,19 +59,22 @@ function displayData(response) {
   iconElement.setAttribute("alt", response.data.condition.icon_url);
 }
 
-let city = "Paris";
-let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayData);
-
 // let cityInput = document.querySelector("#city-search-result");
 // cityInput.innerHTML = `${city}`;
 
-function submitCity(event) {
+function search(city) {
+  let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayData);
+}
+
+function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#user-city");
-  console.log(cityInput.value);
+  search(cityInput.value);
 }
 
 let form = document.querySelector("#search-city");
-form.addEventListener("submit", submitCity);
+form.addEventListener("submit", handleSubmit);
+
+search("New York");
