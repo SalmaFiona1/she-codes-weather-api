@@ -83,7 +83,7 @@
 
 
 <!-- Displays the weather for today + 2 days -->
-          <div class="col-sm" id="city-forecast">
+          <div class="col-sm d-none d-md-block d-lg-block" id="city-forecast">
 
 <div class="row m-1">
            <div class="col-2 p-2 m-1 bg-gradient w-100 text-end">     <div class="weather-forecast-day fw-semibold"> Today
@@ -129,18 +129,18 @@
           Weather
         </h2>
 <div class="row m-0 p-0">
-  <div class="col-sm p-3 m-1 bg-gradient  text-end">Feels like <span id="feels-like"> 1 </span>
+  <div class="col-sm p-3 m-1 bg-gradient text-end shadow">Feels like <span id="feels-like"> 1 </span>
   </div>
-  <div class="col-sm p-3 m-1 bg-gradient city-description text-end">
+  <div class="col-sm p-3 m-1 bg-gradient city-description text-end shadow">
     <span id="city-description" class="fw-semibold">2</span>
   </div>
 </div>
 <div class="row m-0 p-0">
-  <div class="col-sm p-3 m-1 bg-gradient text-end" >Wind:
+  <div class="col-sm p-3 m-1 bg-gradient text-end shadow" >Wind:
 
     <span id="wind-speed"></span>
   </div>
-  <div class="col-sm p-3 m-1 bg-gradient text-end"> Humidity:  
+  <div class="col-sm p-3 m-1 bg-gradient text-end shadow"> Humidity:  
       <span  id="humidity"></span>
   </div>
 </div>
