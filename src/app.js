@@ -51,19 +51,13 @@ function displayData(response) {
   dateElement.innerHTML = lastUpdateTime(response.data.time * 1000);
 
   let iconElement = document.querySelector("#icon");
-
   iconElement.setAttribute("src", `img/${response.data.condition.icon}.png`);
-
   iconElement.setAttribute("alt", response.data.condition.description);
-
   let secondIcon = document.querySelector("#weather-icon");
-
   secondIcon.setAttribute("src", `img/${response.data.condition.icon}.png`);
   secondIcon.setAttribute("alt", response.data.condition.description);
+  showLocation(response.data.coordinates);
 }
-
-// let cityInput = document.querySelector("#city-search-result");
-// cityInput.innerHTML = `${city}`;
 
 function search(city) {
   let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
@@ -76,6 +70,19 @@ function handleSubmit(event) {
   let cityInput = document.querySelector("#user-city");
   search(cityInput.value);
 }
+
+function showLocation(coordinates) {
+  let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayData);
+}
+
+function getLocation() {
+  navigator.geolocation.getCurrentPosition(showLocation);
+}
+
+let button = document.querySelector("#locate-button");
+button.addEventListener("click", getLocation);
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", handleSubmit);
