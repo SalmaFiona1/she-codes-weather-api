@@ -50,13 +50,16 @@ function displayData(response) {
   let dateElement = document.querySelector("#last-updated");
   dateElement.innerHTML = lastUpdateTime(response.data.time * 1000);
 
-  let iconElement = document.querySelector("#city-icon");
-  iconElement.setAttribute(
-    "src",
-    `img/${response.data.condition.icon_url}.png`
-  );
+  let iconElement = document.querySelector("#icon");
 
-  iconElement.setAttribute("alt", response.data.condition.icon_url);
+  iconElement.setAttribute("src", `img/${response.data.condition.icon}.png`);
+
+  iconElement.setAttribute("alt", response.data.condition.description);
+
+  let secondIcon = document.querySelector("#weather-icon");
+
+  secondIcon.setAttribute("src", `img/${response.data.condition.icon}.png`);
+  secondIcon.setAttribute("alt", response.data.condition.description);
 }
 
 // let cityInput = document.querySelector("#city-search-result");
