@@ -71,13 +71,13 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-function showLocation(coordinates) {
+function showLocation(position) {
   let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}`;
   axios.get(apiUrl).then(displayData);
 }
 
-function getLocation() {
+function getLocation(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
