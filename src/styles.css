@@ -30,6 +30,10 @@ img {
   max-width: 1200px;
   background: rgba(0, 0, 0, 0.2);
 }
+.update {
+  color: rgba(193, 188, 188, 0.639);
+  font-size: 15px;
+}
 
 #user-search-result,
 .weather-display {
