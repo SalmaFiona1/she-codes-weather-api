@@ -1,16 +1,34 @@
 function lastUpdateTime(timestamp) {
   let date = new Date(timestamp);
+  let currentDate = date.getDate();
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let am_pm = date.getHours() < 12;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   let day = days[date.getDay()];
+
+  let month = months[date.getMonth()];
   let timeString =
     hours.toString().padStart(2, "0") +
     ":" +
     minutes.toString().padStart(2, "0");
 
-  return ` ${day} ${timeString}${am_pm ? "AM" : "PM"}`;
+  return ` ${day} ${currentDate} ${month} ${timeString}${am_pm ? "AM" : "PM"}`;
 }
 
 function displayData(response) {
