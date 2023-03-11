@@ -58,10 +58,12 @@ function displayData(response) {
 
   iconElement.setAttribute("alt", response.data.condition.icon_url);
 }
+
 let city = "Paris";
 let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-console.log(apiUrl);
+axios.get(apiUrl).then(displayData);
+
 // let cityInput = document.querySelector("#city-search-result");
 // cityInput.innerHTML = `${city}`;
 
@@ -73,5 +75,3 @@ function submitCity(event) {
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", submitCity);
-
-axios.get(apiUrl).then(displayData);
