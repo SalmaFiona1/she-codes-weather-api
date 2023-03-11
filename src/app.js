@@ -81,3 +81,5 @@ let form = document.querySelector("#search-city");
 form.addEventListener("submit", handleSubmit);
 
 search("New York");
+
+// create function for undefined search
