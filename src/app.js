@@ -128,6 +128,7 @@ function showLocation(position) {
 }
 
 function getLocation(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
