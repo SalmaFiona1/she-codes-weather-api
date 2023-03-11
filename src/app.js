@@ -49,8 +49,16 @@ function displayData(response) {
 
   let dateElement = document.querySelector("#last-updated");
   dateElement.innerHTML = lastUpdateTime(response.data.time * 1000);
+
+  let iconElement = document.querySelector("#city-icon");
+  iconElement.setAttribute(
+    "src",
+    `img/${response.data.condition.icon_url}.png`
+  );
+
+  iconElement.setAttribute("alt", response.data.condition.icon_url);
 }
-let city = "London";
+let city = "Paris";
 let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 console.log(apiUrl);
