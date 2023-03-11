@@ -46,8 +46,11 @@ img {
   font-size: 15px;
 }
 
+.today-forecast {
+  font-size: 20px;
+}
+
 #user-search-result,
-#city-description,
 .weather-display {
   color: #c9f9fba4;
   font-family: "Poppins", sans-serif;
