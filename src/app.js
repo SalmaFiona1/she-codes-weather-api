@@ -56,7 +56,57 @@ function displayData(response) {
   let secondIcon = document.querySelector("#weather-icon");
   secondIcon.setAttribute("src", `img/${response.data.condition.icon}.png`);
   secondIcon.setAttribute("alt", response.data.condition.description);
-  showLocation(response.data.coordinates);
+  getForecastData(response.data.coordinates);
+}
+
+function getForecastData(coordinates) {
+  let apiKey = "03fbf04a1etcf05607fe0offcb23d041";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+function formatDate(date) {
+  let format = new Date(date * 1000);
+  let day = format.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  return days[day];
+}
+function displayForecast(response) {
+  let newForecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#city-forecast");
+  let forecastHTML = ` <div class="row m-1">`;
+  newForecast.forEach(function (forecastDay, index) {
+    let des = forecastDay.condition.description;
+    if (index < 3) {
+      forecastHTML =
+        forecastHTML +
+        `
+
+            <div class="col-2 p-2 m-1   bg-gradient rounded-1 w-100 text-end forecast">
+              <div class="weather-forecast-day fw-semibold">${formatDate(
+                forecastDay.time
+              )}
+               <span class="city-forecast-temp
+">${Math.round(forecastDay.temperature.day)}°C</span></div>
+
+
+               <span class="city-forecast-description
+">${des.charAt(0).toUpperCase() + des.slice(1)}
+</span>
+              <img
+       
+                src="img/${forecastDay.condition.icon}.png"
+                alt=""
+                width="52"
+                class="forecast-image p-1"
+              /> 
+             
+            </div>
+`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function search(city) {
